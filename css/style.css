@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
 *{
     margin: 0px;
     padding: 0px;
@@ -7,9 +8,8 @@ body{
     overflow-x: hidden;
 }
 .navbar {
-    background-color: rgba(0, 0, 0, 0.5) !important;
+    background-color: transparent !important;
     border: none;
-    position: fixed;
     top: 0;
     width: 100%;
 }
@@ -19,13 +19,14 @@ body{
 }
 .hero{
     background-position: center bottom;
-    height: 100vh;
+    height: 90vh;
     justify-content: center;
     display: grid;
     align-items: center;
     align-content: center;
     background-repeat: no-repeat;
     width: 100%;
+    padding-top: 0px;
 }
 .hero::before {
     content: "";
@@ -38,6 +39,7 @@ body{
     background-position: center bottom;
     background-size: cover;
     z-index: -1;
+    filter: grayscale(0.2) brightness(0.5);
 }
 .hero h1{
     font-size: 72px;
@@ -49,6 +51,27 @@ body{
     font-family: "Roboto Condensed";
     text-align: center;
 }
+.fontGochi{
+    color:#a5a5a5;
+    font-size: 48px;
+    letter-spacing: 2px;
+    font-weight:400;
+    font-family: 'Gochi Hand', serif;
+}
+.fontGochi a {
+    color: #FFCA2C;
+}
+.hero h1::after {
+    content: "";
+    display: block;
+    width: 4%;
+    height: 5px;
+    margin-top: 20px;
+    background-color: #FFCA2C; 
+    margin-left: 50%; 
+}
+
+
 .hero p{
     width: 827px;
     height: 65px;
@@ -60,9 +83,17 @@ body{
     font-family: "Roboto Condensed";
     text-align: center;
 }
+.hero button{
+    border: 3px solid #FFCA2C;
+    padding: 10px 30px;
+}
+.hero button:hover{
+background:transparent;
+}
 .banner-text{
     display: grid;
     justify-content: center;
+    
 }
 .banner-text p,li {
     font-size: 22px;
@@ -88,6 +119,7 @@ body{
 .content-container h3 {
     position: relative;
     padding-right: 10px;
+    font-size: 48px;
 }
 
 .content-container h3::after {
@@ -160,9 +192,28 @@ body{
     background:#39B30D;
     color:#fff;
 }
-.blue{
-    background-color: #2c3e50;
+/* .blue{
+    /* background-color: #2c3e50;
+} */
+
+.blue {
+    position: relative; 
+    overflow: hidden; /* Hide any overflow caused by skew */
 }
+
+.blue::before {
+    content: "";
+    position: absolute;
+    top: -20%; /* Adjust to control skew coverage */
+    left: -10%;
+    width: 120%; /* Increase width to cover the skew area */
+    height: 150%; /* Increase height to cover the skew area */
+    background: #2c3e50; /* Blue background color */
+    transform: skew(5deg); /* Skews from the left along the X-axis */
+    transform-origin: top left;
+    z-index: -1; /* Ensure it appears behind the content */
+}
+
 .green h4{
     font-size: 30px;
 }
@@ -175,6 +226,9 @@ body{
 }
 .content-container button{
 border-color: #fff;
+}
+.content-container p{
+    font-size: 20px;
 }
 .slide-text{
     font-size: 30px;
@@ -190,6 +244,8 @@ border-color: #fff;
     display: flex;
     height: 140px;
     overflow: hidden;
+    align-items: center;
+    display: flex
 }
 .owl-carousel img{
     height:100px !important;
