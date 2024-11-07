@@ -73,7 +73,6 @@ body{
 
 
 .hero p{
-    width: 827px;
     height: 65px;
     font-size: 30px;
     letter-spacing: 0px;
@@ -119,7 +118,7 @@ background:transparent;
 .content-container h3 {
     position: relative;
     padding-right: 10px;
-    font-size: 48px;
+    font-size: 45px;
 }
 
 .content-container h3::after {
@@ -133,7 +132,8 @@ background:transparent;
 
 .skew-container {
     position: relative;
-    overflow: hidden;
+    min-height: 200px;
+    z-index: 1; 
 }
 
 .skew-container::before {
@@ -150,6 +150,9 @@ background:transparent;
     z-index: -1; 
 }
 
+.skew-container button{
+    font-size: 22px;
+}
 .skew-container-content {
     position: relative;
     z-index: 1;
@@ -163,14 +166,14 @@ background:transparent;
     /* background-position: cover; */
 /* } */
 .skew-container h1{
-    font-size: 32px;
-    letter-spacing: 0px;
+    padding-top: 15px;
+    font-size: 55px;
     text-transform: uppercase;
     color: #ffffff;
     font-weight: 700;
 }
 .skew-container p{
-    font-size: 16px;
+    font-size: 22px;
     color: #fff;
 }
 .image-text-box p{
@@ -198,18 +201,18 @@ background:transparent;
 
 .blue {
     position: relative; 
-    overflow: hidden; /* Hide any overflow caused by skew */
+    overflow: hidden;
 }
 
 .blue::before {
     content: "";
     position: absolute;
-    top: -20%; /* Adjust to control skew coverage */
+    top: -20%; 
     left: -10%;
-    width: 120%; /* Increase width to cover the skew area */
-    height: 150%; /* Increase height to cover the skew area */
-    background: #2c3e50; /* Blue background color */
-    transform: skew(5deg); /* Skews from the left along the X-axis */
+    width: 120%; 
+    height: 150%; 
+    background: #2c3e50; 
+    transform: skew(5deg); 
     transform-origin: top left;
     z-index: -1; /* Ensure it appears behind the content */
 }
