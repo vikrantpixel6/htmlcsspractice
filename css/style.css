@@ -76,15 +76,18 @@ body{
     top: 0;
     width: 100%;
 }
+.navbar ul li a:hover{
+    color: #FFCA2C;
+}
 .hero{
     text-align: center;
     background-position: center bottom;
-    height: 90vh;
+    height: 84vh;
     background-repeat: no-repeat;
     width: 100%;
     padding-top: 120px;
 }
-.hero::before {
+.hero::before { 
     content: "";
     position: absolute;
     top: 0;
@@ -129,34 +132,75 @@ body{
     font-weight: 400;
 }
 .hero button:hover{
-background:transparent;
+background:#ffca2c;
+color:#fff;
 }
 .hero a .fa-solid{
     color:#FFCA2C;
 }
-.fontGochi{
+.slider{
+    display: flex;
+}
+
+.slider h4{
+    color: #FFCA2C;
+    font-weight: 800;
+    text-transform: uppercase;
+    align-items: center;
+    display: flex;
+    padding-right: 1%;
+    width: 20%;
+}
+.slider-container{
+    display: flex;
+    background: #0101;
+    width: 80%;
+       overflow: hidden;
+}
+.slider-img{
+    flex: 0 0 25%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 3%;
+    height: 100px;
+    padding: 15px;
+    width: 25%;
+    transition: transform 1s ease;
+    animation: marquee 5s linear infinite;
+}
+@keyframes marquee {
+    0% {
+        transform: translateX(0); 
+    }
+    100% {
+        transform: translateX(-50%); 
+    }
+}
+
+.different_font {
     color:#a5a5a5;
     font-size: 48px;
     letter-spacing: 2px;
     font-weight:400;
     font-family: 'Gochi Hand', serif;
+
 }
-.fontGochi a {
-    color: #FFCA2C;
-}
-
-
-
 
 .banner-text{
     display: grid;
+    text-align: justify;
     justify-content: center;
     
 }
 .banner-text p,li {
     font-size: 22px;
 }
-
+.content-box{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
 .content-img-box{
     display: flex;
     padding: 10px 70px;
@@ -178,6 +222,7 @@ background:transparent;
     position: relative;
     padding-right: 10px;
     font-size: 45px;
+    padding-bottom: 30px;
 }
 
 .content-container h3::after {
@@ -235,6 +280,11 @@ background:transparent;
     font-size: 22px;
     color: #fff;
 }
+.image-text-box{
+    text-align: center;
+    background-image: url('../images/longterm.png');
+    background-repeat: no-repeat;
+}
 .image-text-box p{
     position: relative;
     top: 194px;
@@ -246,9 +296,6 @@ background:transparent;
 .image-text-box p span{
     font-size: 42px;
     font-weight: 900;
-}
-.image-text-box img{
-    width: 45%;
 }
 .green{
     background:#39B30D;
@@ -299,23 +346,6 @@ border-color: #fff;
     padding: 15px;
     padding-left: 28px;
 }  
-.owl-carousel{
-    background: #0101;
-    padding: 10px 30px;
-    align-self: center;
-    display: flex;
-    height: 140px;
-    overflow: hidden;
-    align-items: center;
-    display: flex
-}
-.owl-carousel img{
-    height:100px !important;
-    padding: 30px;
-    width: auto;
-    position: cover;
-    background-size: cover;
-}
 .footer{
     background: #2C3E50;
     color: #fff;
@@ -393,4 +423,56 @@ border-color: #fff;
         padding: 5px 20px;
         font-size: 1rem;
     }
+    .hero {
+        height: 90vh;
+    }
   }
+
+
+@media (max-width: 1200px) {
+    .slider-img {
+        flex: 0 0 33.33%;
+        width: 33.33%;
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-33.33%);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .slider-img {
+        flex: 0 0 50%;
+        width: 50%;
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-img {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+}
